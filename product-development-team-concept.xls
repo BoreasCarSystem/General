@@ -1,0 +1,2073 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<Workbook xmlns:html='http://www.w3.org/TR/REC-html40'
+          xmlns:o='urn:schemas-microsoft-com:office:office'
+          xmlns:ss='urn:schemas-microsoft-com:office:spreadsheet'
+          xmlns:x='urn:schemas-microsoft-com:office:excel'
+          xmlns='urn:schemas-microsoft-com:office:spreadsheet'>
+  <DocumentProperties xmlns='urn:schemas-microsoft-com:office:office'>
+    <LastAuthor>Vilde Mariussen</LastAuthor>
+    <Created>2016-03-08 09:52:42 UTC</Created>
+    <LastSaved>%= Time.now.utc %></LastSaved>
+    <Version>1.0</Version>
+  </DocumentProperties>
+  <OfficeDocumentSettings xmlns='urn:schemas-microsoft-com:office:office'>
+    <AllowPNG />
+  </OfficeDocumentSettings>
+  <ExcelWorkbook xmlns='urn:schemas-microsoft-com:office:excel'>
+    <ProtectStructure>False</ProtectStructure>
+    <ProtectWindows>False</ProtectWindows>
+  </ExcelWorkbook>
+  <Styles>
+    <Style ss:ID='Default' ss:Name='Normal'>
+      <Alignment ss:Vertical='Top' ss:WrapText='1' />
+      <Borders />
+      <Font ss:Color='#000000' ss:FontName='Calibri' ss:Size='12' x:Family='Swiss' />
+      <Interior />
+      <NumberFormat />
+      <Protection />
+    </Style>
+    <Style ss:ID='title'>
+      <Alignment ss:Vertical='Bottom' ss:WrapText='1' />
+      <Font ss:Bold='1' ss:Color='#000000' ss:FontName='Calibri' ss:Size='15' />
+    </Style>
+    <Style ss:ID='top-base-stats'>
+      <Alignment ss:Horizontal='Right' ss:Vertical='Center' ss:WrapText='1' />
+      <Font ss:Bold='0' ss:Color='#000000' ss:FontName='Calibri' ss:Size='11' />
+    </Style>
+    <Style ss:ID='table-header'>
+      <Alignment ss:Horizontal='Center' ss:Vertical='Center' ss:WrapText='1' />
+      <Font ss:Bold='1' ss:Color='#000000' ss:FontName='Calibri' ss:Size='12' />
+      <Interior ss:Color='#CCFFFF' ss:Pattern='Solid' />
+    </Style>
+    <Style ss:ID='numeric'>
+      <Alignment ss:Horizontal='Right' ss:Vertical='Top'/>
+      <Font ss:Bold='0' ss:Color='#000000' ss:FontName='Calibri' ss:Size='12' />
+    </Style>
+    <Style ss:ID='theme-summary'>
+      <Alignment ss:Horizontal='Left' ss:Vertical='Top' ss:WrapText='1' />
+      <Font ss:Color='#000000' ss:FontName='Calibri' ss:Size='12' />
+      <Interior ss:Color='#C0C0C0' ss:Pattern='Solid' />
+    </Style>
+    <Style ss:ID='theme-total'>
+      <Alignment ss:Horizontal='Right' ss:Vertical='Bottom' ss:WrapText='1' />
+      <Font ss:Bold='1' ss:Color='#000000' ss:FontName='Calibri' ss:Size='12' />
+      <Interior ss:Color='#C0C0C0' ss:Pattern='Solid' />
+    </Style>
+    <Style ss:ID='theme-cell'>
+      <Alignment ss:Vertical='Top' ss:WrapText='1' />
+      <Font ss:Bold='1' ss:Color='#000000' ss:FontName='Calibri' ss:Size='12' />
+    </Style>
+    <Style ss:ID='backlog-summary'>
+      <Alignment ss:Horizontal='Left' ss:Vertical='Top' ss:WrapText='1' />
+      <Font ss:Bold='1' ss:Color='#000000' ss:FontName='Calibri' ss:Size='14' />
+      <Interior ss:Color='#CCFFFF' ss:Pattern='Solid' />
+    </Style>
+    <Style ss:ID='backlog-total'>
+      <Alignment ss:Horizontal='Right' ss:Vertical='Bottom' ss:WrapText='1' />
+      <Font ss:Bold='1' ss:Color='#000000' ss:FontName='Calibri' ss:Size='14' />
+      <Interior ss:Color='#CCFFFF' ss:Pattern='Solid' />
+    </Style>
+          <Style ss:ID='story-color-0'>
+        <Borders>
+          <Border ss:Position='Left' ss:Color='#9900ff' ss:Weight='3' ss:LineStyle='Continuous' />
+        </Borders>
+      </Style>
+
+      <Style ss:ID='story-color-1'>
+        <Borders>
+          <Border ss:Position='Left' ss:Color='#00ff00' ss:Weight='3' ss:LineStyle='Continuous' />
+        </Borders>
+      </Style>
+
+      <Style ss:ID='story-color-2'>
+        <Borders>
+          <Border ss:Position='Left' ss:Color='#00ffff' ss:Weight='3' ss:LineStyle='Continuous' />
+        </Borders>
+      </Style>
+
+      <Style ss:ID='story-color-3'>
+        <Borders>
+          <Border ss:Position='Left' ss:Color='#ffd966' ss:Weight='3' ss:LineStyle='Continuous' />
+        </Borders>
+      </Style>
+
+      <Style ss:ID='story-color-4'>
+        <Borders>
+          <Border ss:Position='Left' ss:Color='#d5a6bd' ss:Weight='3' ss:LineStyle='Continuous' />
+        </Borders>
+      </Style>
+
+      <Style ss:ID='story-color-5'>
+        <Borders>
+          <Border ss:Position='Left' ss:Color='#cfe2f3' ss:Weight='3' ss:LineStyle='Continuous' />
+        </Borders>
+      </Style>
+
+      <Style ss:ID='story-color-6'>
+        <Borders>
+          <Border ss:Position='Left' ss:Color='#f6b26b' ss:Weight='3' ss:LineStyle='Continuous' />
+        </Borders>
+      </Style>
+
+      <Style ss:ID='story-color-7'>
+        <Borders>
+          <Border ss:Position='Left' ss:Color='#93c47d' ss:Weight='3' ss:LineStyle='Continuous' />
+        </Borders>
+      </Style>
+
+      <Style ss:ID='story-color-8'>
+        <Borders>
+          <Border ss:Position='Left' ss:Color='#ff00ff' ss:Weight='3' ss:LineStyle='Continuous' />
+        </Borders>
+      </Style>
+
+      <Style ss:ID='story-color-9'>
+        <Borders>
+          <Border ss:Position='Left' ss:Color='#6666ff' ss:Weight='3' ss:LineStyle='Continuous' />
+        </Borders>
+      </Style>
+
+  </Styles>
+  <Worksheet ss:Name='Backlog Report'>
+  <Table>
+    <Column ss:AutoFitWidth="1" ss:Width="90" /> <!--Theme-->
+    <Column ss:AutoFitWidth="1" ss:Width="45" /> <!--ID-->
+    <Column ss:AutoFitWidth="1" ss:Width="240" /> <!--User Story-->
+    <Column ss:AutoFitWidth="1" ss:Width="240" /> <!--Acceptance Criteria-->
+    <Column ss:AutoFitWidth="1" ss:Width="240" /> <!--Comments-->
+    <Column ss:AutoFitWidth="1" ss:Width="50" /> <!--Sprint-->
+    <Column ss:AutoFitWidth="1" ss:Width="90" /> <!--Status-->
+      <Column ss:AutoFitWidth="1" ss:Width="45" /> <!--Score -->
+      <Column ss:AutoFitWidth="1" ss:Width="45" /> <!--Days-->
+    <Row ss:AutoFitHeight='0' ss:Height='18'>
+      <Cell ss:MergeAcross='3' ss:StyleID='title'>
+        <Data ss:Type='String'>Product Development Team Concept</Data>
+      </Cell>
+      <Cell ss:MergeAcross='4' ss:StyleID='top-base-stats'>
+        <Data ss:Type='String'>Velocity: 0.8</Data>
+      </Cell>
+    </Row>
+    <Row>
+      <Cell ss:StyleID='table-header'>
+        <Data ss:Type='String'>Theme</Data>
+      </Cell>
+      <Cell ss:StyleID='table-header'>
+        <Data ss:Type='String'>ID</Data>
+      </Cell>
+      <Cell ss:StyleID='table-header'>
+        <Data ss:Type='String'>User Story</Data>
+      </Cell>
+      <Cell ss:StyleID='table-header'>
+        <Data ss:Type='String'>Acceptance Criteria</Data>
+      </Cell>
+      <Cell ss:StyleID='table-header'>
+        <Data ss:Type='String'>Comments</Data>
+      </Cell>
+      <Cell ss:StyleID='table-header'>
+        <Data ss:Type='String'>Sprint</Data>
+      </Cell>
+      <Cell ss:StyleID='table-header'>
+        <Data ss:Type='String'>Status</Data>
+      </Cell>
+        <Cell ss:StyleID='table-header'>
+          <Data ss:Type='String'><span class="translation_missing" title="translation missing: en.backlog.points">Points</span></Data>
+        </Cell>
+        <Cell ss:StyleID='table-header'>
+          <Data ss:Type='String'>Days</Data>
+        </Cell>
+    </Row>
+        <Row>
+      <Cell ss:MergeDown='5' ss:StyleID='theme-cell'>
+        <Data ss:Type='String'>AC Control</Data>
+      </Cell>
+      <Cell ss:Index='2' ss:StyleID=&#x27;story-color-0&#x27;>
+  <Data ss:Type='String'>ACC1</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'><Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">As</Font> a car driver
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">I want to</Font> set the temperature in the car before driving
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">So I can</Font> have a pleasant ride</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>a) User sets temperature in interface&#10;&#13;b) Raspberry Pi sets AC is to said temperature.</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Prerequisite for ACC2 and others</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Sprint 1</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Accepted</Data>
+</Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'>8.0</Data>
+  </Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'>10.0</Data>
+  </Cell>
+
+    </Row>
+    <Row>
+      <Cell ss:Index='2' ss:StyleID=&#x27;story-color-0&#x27;>
+  <Data ss:Type='String'>ACC2</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'><Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">As</Font> a car driver
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">I want to</Font> be able to activate the AC remotely
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">So I can</Font> come to the car with a nice temperature</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>a) User connects to car remotely&#10;&#13;b) User sets temperature in interface&#10;&#13;c) Raspberry pi sets AC to said temperature.</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'></Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Sprint 2</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>To do</Data>
+</Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'>16.0</Data>
+  </Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'>20.0</Data>
+  </Cell>
+
+    </Row>
+    <Row>
+      <Cell ss:Index='2' ss:StyleID=&#x27;story-color-0&#x27;>
+  <Data ss:Type='String'>ACC3</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'><Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">As</Font> a car driver
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">I want to</Font> be sure that the battery doesn&#x27;t go flat when I activate the AC
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">So I can</Font> be sure I am able to drive when I want to</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>a) When user activates system, the Raspberry Pi monitors battery&#10;&#13;b) If battery is unreasonably low, the system deactivates.</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>We should find out when the battery is unreasonably low.</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Sprint 3</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>To do</Data>
+</Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'></Data>
+  </Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'>0.0</Data>
+  </Cell>
+
+    </Row>
+    <Row>
+      <Cell ss:Index='2' ss:StyleID=&#x27;story-color-0&#x27;>
+  <Data ss:Type='String'>ACC4</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'><Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">As</Font> a car driver
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">I want to</Font> set a specific time for the car to have a temperature
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">So I can</Font> be sure the car is ready when I need it</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>a) A specific time is set in the interface together with the temperature&#10;&#13;b) The Raspberry Pi activates the system, so that the car has the right temperature at the specified time.</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'></Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Sprint 4</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>To do</Data>
+</Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'></Data>
+  </Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'>0.0</Data>
+  </Cell>
+
+    </Row>
+    <Row>
+      <Cell ss:Index='2' ss:StyleID=&#x27;story-color-1&#x27;>
+  <Data ss:Type='String'>ACC5</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'><Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">As</Font> a car driver
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">I want to</Font> have the car automatically adjust the humidity
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">So I can</Font> see through the windows without any dew obscuring the view </Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>a) There is a sensor inside the car cabin, that monitors the humidity.&#10;&#13;b) The sensor sends its data to the Raspberry Pi&#10;&#13;c) When the conditions for dew are present and the humidity rises, the Raspberry Pi will activate the fans and heating system.</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Conditions: It is colder outside than inside</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Sprint 5</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>To do</Data>
+</Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'></Data>
+  </Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'>0.0</Data>
+  </Cell>
+
+    </Row>
+  <Row>
+    <Cell ss:Index='2' ss:MergeAcross='2' ss:StyleID='theme-summary'>
+      <Data ss:Type='String'>Total for theme &#x27;AC Control&#x27;</Data>
+    </Cell>
+    <Cell ss:MergeAcross='4' ss:StyleID='theme-total'>
+      <Data ss:Type='String'>24.0 points / 30.0 days</Data>
+    </Cell>
+  </Row>
+  <Row ss:AutoFitHeight='0' ss:Height='5'>
+    <Cell ss:MergeAcross='8' />
+  </Row>
+    <Row>
+      <Cell ss:MergeDown='15' ss:StyleID='theme-cell'>
+        <Data ss:Type='String'>Status</Data>
+      </Cell>
+      <Cell ss:Index='2'>
+  <Data ss:Type='String'>STA1</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'><Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">As</Font> a car driver
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">I want to</Font> have a graphical interface informing me of the car&#x27;s current status
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">So I can</Font> know whether the car needs maintenance</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>a) This involves showing the status of STA3, STA5, STA7, STA9, STA11, STA13 and STA14.</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>This story serves as a framework, around which we can implement additional sensors/things to measure. </Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Sprint 2</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>To do</Data>
+</Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'></Data>
+  </Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'>0.0</Data>
+  </Cell>
+
+    </Row>
+    <Row>
+      <Cell ss:Index='2'>
+  <Data ss:Type='String'>STA2</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'><Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">As</Font> a car driver
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">I want to</Font> access the same information from STA1 remotely
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">So I can</Font> know whether the car needs maintenance without leaving the comfort of home</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>a) Same as STA1, but displayed remotely in another device.</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Remote-version of STA1</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Sprint 2</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>To do</Data>
+</Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'></Data>
+  </Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'>0.0</Data>
+  </Cell>
+
+    </Row>
+    <Row>
+      <Cell ss:Index='2' ss:StyleID=&#x27;story-color-2&#x27;>
+  <Data ss:Type='String'>STA3</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'><Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">As</Font> a car driver
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">I want to</Font> see how much washer fluid remains
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">So I can</Font> feel safer when driving</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>a) An element in the user interface that shows the current washer fluid level</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Washer fluid = spylervæske. </Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'></Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'></Data>
+</Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'></Data>
+  </Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'>0.0</Data>
+  </Cell>
+
+    </Row>
+    <Row>
+      <Cell ss:Index='2' ss:StyleID=&#x27;story-color-2&#x27;>
+  <Data ss:Type='String'>STA4</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'><Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">As</Font> a car driver
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">I want to</Font> be notified when the washer fluid is nearly empty
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">So I can</Font> know purchase more before it is empty</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>a) A popup notification notifies the user that the washer fluid is almost empty</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>requires STA3?</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'></Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'></Data>
+</Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'></Data>
+  </Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'>0.0</Data>
+  </Cell>
+
+    </Row>
+    <Row>
+      <Cell ss:Index='2' ss:StyleID=&#x27;story-color-3&#x27;>
+  <Data ss:Type='String'>STA5</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'><Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">As</Font> a car driver
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">I want to</Font> see when the brake fluid needs replacing
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">So I can</Font> ensure safe functioning of the car</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>a) A label represents the status of the brake system</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'></Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Sprint 3</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>To do</Data>
+</Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'></Data>
+  </Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'>0.0</Data>
+  </Cell>
+
+    </Row>
+    <Row>
+      <Cell ss:Index='2' ss:StyleID=&#x27;story-color-3&#x27;>
+  <Data ss:Type='String'>STA6</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'><Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">As</Font> a car driver
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">I want to</Font> be notified when the brake fluid needs to be replaced soon
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">So I can</Font> plan to take the car to a workshop</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>a) A popup notification notifies the user that the brake fluid needs replacing. </Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>requires STA5</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Sprint 3</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>To do</Data>
+</Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'></Data>
+  </Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'>0.0</Data>
+  </Cell>
+
+    </Row>
+    <Row>
+      <Cell ss:Index='2' ss:StyleID=&#x27;story-color-4&#x27;>
+  <Data ss:Type='String'>STA7</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'><Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">As</Font> a car driver
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">I want to</Font> know when the motor oil and filter needs replacing
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">So I can</Font> make the engine last longer</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>a) An element in the user interface that displays the current oil level  </Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>If possible, also display oil quality ( how contaminated the oil is)</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Sprint 4</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>To do</Data>
+</Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'></Data>
+  </Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'>0.0</Data>
+  </Cell>
+
+    </Row>
+    <Row>
+      <Cell ss:Index='2' ss:StyleID=&#x27;story-color-4&#x27;>
+  <Data ss:Type='String'>STA8</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'><Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">As</Font> a car driver
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">I want to</Font> notified when the motor oil and filter needs to be replaced soon
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">So I can</Font> plan around it and buy the needed parts</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>a) A popup notification notifies the user that the motor oil and filter needs to be replaced.</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>requires STA7. If it&#x27;s impossible to display oil quality, the application should instead remind the user to check the oil at regular time intervals.</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Sprint 4</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>To do</Data>
+</Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'></Data>
+  </Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'>0.0</Data>
+  </Cell>
+
+    </Row>
+    <Row>
+      <Cell ss:Index='2' ss:StyleID=&#x27;story-color-5&#x27;>
+  <Data ss:Type='String'>STA9</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'><Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">As</Font> a car driver
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">I want to</Font> know the engine coolant level
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">So I can</Font> be sure the engine is properly cooled</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>a) An element in the user interface that displays the current engine coolant level.</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>If possible, also display the level of contamination of the coolant.</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Sprint 5</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>To do</Data>
+</Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'></Data>
+  </Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'>0.0</Data>
+  </Cell>
+
+    </Row>
+    <Row>
+      <Cell ss:Index='2' ss:StyleID=&#x27;story-color-5&#x27;>
+  <Data ss:Type='String'>STA10</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'><Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">As</Font> a car driver
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">I want to</Font> be notified when the engine coolant level drops below a certain point
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">So I can</Font> plan to buy more coolant and add it to the car</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>a) A popup notification notifies the user that the engine coolant level is below recommended levels.</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>requires STA9</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Sprint 5</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>To do</Data>
+</Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'></Data>
+  </Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'>0.0</Data>
+  </Cell>
+
+    </Row>
+    <Row>
+      <Cell ss:Index='2' ss:StyleID=&#x27;story-color-6&#x27;>
+  <Data ss:Type='String'>STA11</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'><Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">As</Font> a car driver
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">I want to</Font> know that all the lights work
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">So I can</Font> know that others see me and my signals on the road</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>a) A status label that tells whether the lights works or not.</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'></Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Sprint 6</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>To do</Data>
+</Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'></Data>
+  </Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'>0.0</Data>
+  </Cell>
+
+    </Row>
+    <Row>
+      <Cell ss:Index='2' ss:StyleID=&#x27;story-color-6&#x27;>
+  <Data ss:Type='String'>STA12</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'><Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">As</Font> a car driver
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">I want to</Font> be notified when a bulb fails
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">So I can</Font> exchange the broken bulb</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>a) A popup notification notifies the user when a bulb fails.</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>requires STA11</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Sprint 6</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>To do</Data>
+</Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'></Data>
+  </Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'>0.0</Data>
+  </Cell>
+
+    </Row>
+    <Row>
+      <Cell ss:Index='2' ss:StyleID=&#x27;story-color-7&#x27;>
+  <Data ss:Type='String'>STA13</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'><Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">As</Font> a car driver
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">I want to</Font> know my average fuel consumption
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">So I can</Font> be more conscious about my fuel usage</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>a) A label displays the current average fuel consumption.</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>average fuel consumption in litres per mile(metric)</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Sprint 6</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>To do</Data>
+</Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'></Data>
+  </Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'>0.0</Data>
+  </Cell>
+
+    </Row>
+    <Row>
+      <Cell ss:Index='2' ss:StyleID=&#x27;story-color-8&#x27;>
+  <Data ss:Type='String'>STA14</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'><Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">As</Font> a car driver
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">I want to</Font> be able to see the battery&#x27;s current charge
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">So I can</Font> prevent running out</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>a) An element in the user interface displays the current charge level of the battery</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'></Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Sprint 6</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>To do</Data>
+</Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'></Data>
+  </Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'>0.0</Data>
+  </Cell>
+
+    </Row>
+    <Row>
+      <Cell ss:Index='2' ss:StyleID=&#x27;story-color-8&#x27;>
+  <Data ss:Type='String'>STA15</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'><Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">As</Font> a car driver
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">I want to</Font> be notified when the battery&#x27;s charge drops to a certain limit
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">So I can</Font> preliminarly </Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>a) A popup notification notifies the user if the battery drops below a certain level</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>We should find out when the battery is unreasonably low (same as ACC3)</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Sprint 6</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>To do</Data>
+</Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'></Data>
+  </Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'>0.0</Data>
+  </Cell>
+
+    </Row>
+  <Row>
+    <Cell ss:Index='2' ss:MergeAcross='2' ss:StyleID='theme-summary'>
+      <Data ss:Type='String'>Total for theme &#x27;Status&#x27;</Data>
+    </Cell>
+    <Cell ss:MergeAcross='4' ss:StyleID='theme-total'>
+      <Data ss:Type='String'>0.0 points / 0.0 days</Data>
+    </Cell>
+  </Row>
+  <Row ss:AutoFitHeight='0' ss:Height='5'>
+    <Cell ss:MergeAcross='8' />
+  </Row>
+    <Row>
+      <Cell ss:MergeDown='5' ss:StyleID='theme-cell'>
+        <Data ss:Type='String'>Gamification</Data>
+      </Cell>
+      <Cell ss:Index='2' ss:StyleID=&#x27;story-color-9&#x27;>
+  <Data ss:Type='String'>GAM1</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'><Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">As</Font> a car driver
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">I want to</Font> have fun while driving eco-friendly
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">So I can</Font> have an incentive to improve</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>a) This should include GAM2, GAM4 and GAM5</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'></Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'></Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'></Data>
+</Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'></Data>
+  </Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'>0.0</Data>
+  </Cell>
+
+    </Row>
+    <Row>
+      <Cell ss:Index='2' ss:StyleID=&#x27;story-color-9&#x27;>
+  <Data ss:Type='String'>GAM2</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'><Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">As</Font> a car driver
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">I want to</Font> compare my fuel consumption to other drivers that use the same vehicle
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">So I can</Font> be motivated to save more fuel</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>a) A highscore list displays the score of the different users of the same vehicle&#10;&#13;b) Needs a simple user system so the different drivers can log in.</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Compare locally (to other users of same car); comparing on the Internet to other cars requires much more work (separate user story?)</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Sprint 3</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>To do</Data>
+</Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'></Data>
+  </Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'>0.0</Data>
+  </Cell>
+
+    </Row>
+    <Row>
+      <Cell ss:Index='2' ss:StyleID=&#x27;story-color-9&#x27;>
+  <Data ss:Type='String'>GAM3</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'><Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">As</Font> a car driver
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">I want to</Font> get tips for how to save more fuel
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">So I can</Font> know what to do to save more fuel</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'></Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Would use brake information and acceleration to give relevant hints. Requires research. We are unsure on how to solve this. Should it be with notifications, or as a part of an interface?</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Sprint 4</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>To do</Data>
+</Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'></Data>
+  </Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'>0.0</Data>
+  </Cell>
+
+    </Row>
+    <Row>
+      <Cell ss:Index='2' ss:StyleID=&#x27;story-color-9&#x27;>
+  <Data ss:Type='String'>GAM4</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'><Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">As</Font> a car driver of a Volvo XC90
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">I want to</Font> see a highscore of fuel consumption among people who drive a Volvo XC90.
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">So I can</Font> be motivated to save more fuel</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>a) Users need to be registered, along with their car type.&#10;&#13;b) High scores are created among people with the same car type</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Compare fuel usage among drivers who use the same kind of car.</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Sprint 5</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>To do</Data>
+</Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'></Data>
+  </Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'>0.0</Data>
+  </Cell>
+
+    </Row>
+    <Row>
+      <Cell ss:Index='2' ss:StyleID=&#x27;story-color-9&#x27;>
+  <Data ss:Type='String'>GAM5</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'><Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">As</Font> a car driver
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">I want to</Font> be able to reach goals
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">So I can</Font> be motivated to save more fuel</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>a) A set of reachable goals should be specified&#10;&#13;b) The user will get a notification when the goals are reached.&#10;&#13;c) The user should be able to browse their achievements.</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>A set of achievements that awards the driver points when reached. </Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Sprint 6</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>To do</Data>
+</Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'></Data>
+  </Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'>0.0</Data>
+  </Cell>
+
+    </Row>
+  <Row>
+    <Cell ss:Index='2' ss:MergeAcross='2' ss:StyleID='theme-summary'>
+      <Data ss:Type='String'>Total for theme &#x27;Gamification&#x27;</Data>
+    </Cell>
+    <Cell ss:MergeAcross='4' ss:StyleID='theme-total'>
+      <Data ss:Type='String'>0.0 points / 0.0 days</Data>
+    </Cell>
+  </Row>
+  <Row ss:AutoFitHeight='0' ss:Height='5'>
+    <Cell ss:MergeAcross='8' />
+  </Row>
+    <Row>
+      <Cell ss:MergeDown='4' ss:StyleID='theme-cell'>
+        <Data ss:Type='String'>Tech stories</Data>
+      </Cell>
+      <Cell ss:Index='2'>
+  <Data ss:Type='String'>TES1</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'><Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">As</Font> 
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">I want to</Font> set up Raspberry PI for development (car PI)
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">So I can</Font> </Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>a) access PI from other computers</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'></Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Sprint 1</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Accepted</Data>
+</Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'>4.0</Data>
+  </Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'>5.0</Data>
+  </Cell>
+
+    </Row>
+    <Row>
+      <Cell ss:Index='2'>
+  <Data ss:Type='String'>TES2</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'><Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">As</Font> 
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">I want to</Font> set up a running web server
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">So I can</Font> run our server code</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>a) can be accessed from other computers on the same subnet&#10;&#13;b) easy to deploy new code</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'></Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Sprint 1</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Accepted</Data>
+</Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'>4.0</Data>
+  </Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'>5.0</Data>
+  </Cell>
+
+    </Row>
+    <Row>
+      <Cell ss:Index='2'>
+  <Data ss:Type='String'>TES3</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'><Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">As</Font> 
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">I want to</Font> define protocol for communication between the different components
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">So I can</Font> develop those features without bad surprises</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>a) web api ←→ carCommunicator&#10;&#13;b) CarDataStreamer → CarCommunicator&#10;&#13;c) CarCommunicator → CarControl&#10;&#13;d) client ←→ web api</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'></Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Sprint 1</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Accepted</Data>
+</Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'>10.0</Data>
+  </Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'>12.5</Data>
+  </Cell>
+
+    </Row>
+    <Row>
+      <Cell ss:Index='2'>
+  <Data ss:Type='String'>TES4</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'><Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">As</Font> a developer
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">I want to</Font> have a defined class diagram
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">So I can</Font> easily work on parts of the project that will work with the rest as a whole.</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>a) Temperature and status&#10;&#13;b) Communication between webserver and Pi&#10;&#13;c) Webserver</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'></Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Sprint 1</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Accepted</Data>
+</Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'>8.0</Data>
+  </Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'>10.0</Data>
+  </Cell>
+
+    </Row>
+  <Row>
+    <Cell ss:Index='2' ss:MergeAcross='2' ss:StyleID='theme-summary'>
+      <Data ss:Type='String'>Total for theme &#x27;Tech stories&#x27;</Data>
+    </Cell>
+    <Cell ss:MergeAcross='4' ss:StyleID='theme-total'>
+      <Data ss:Type='String'>26.0 points / 32.5 days</Data>
+    </Cell>
+  </Row>
+  <Row ss:AutoFitHeight='0' ss:Height='5'>
+    <Cell ss:MergeAcross='8' />
+  </Row>
+
+    <Row ss:AutoFitHeight='0' ss:Height='18'>
+      <Cell ss:MergeAcross='3' ss:StyleID='backlog-summary'>
+        <Data ss:Type='String'>Total for backlog &#x27;Product Development Team Concept&#x27;</Data>
+      </Cell>
+      <Cell ss:MergeAcross='4' ss:StyleID='backlog-total'>
+        <Data ss:Type='String'>50.0 points / 62.5 days</Data>
+      </Cell>
+    </Row>
+  </Table>
+  <WorksheetOptions xmlns='urn:schemas-microsoft-com:office:excel'>
+    <PageLayoutZoom>0</PageLayoutZoom>
+    <Selected />
+    <Panes />
+    <ProtectObjects>False</ProtectObjects>
+    <ProtectScenarios>False</ProtectScenarios>
+  </WorksheetOptions>
+</Worksheet>
+  <Worksheet ss:Name='Story List'>
+  <Table>
+    <Column ss:AutoFitWidth="1" ss:Width="90" /> <!--Theme-->
+    <Column ss:AutoFitWidth="1" ss:Width="45" /> <!--ID-->
+    <Column ss:AutoFitWidth="1" ss:Width="240" /> <!--User Story-->
+    <Column ss:AutoFitWidth="1" ss:Width="240" /> <!--Acceptance Criteria-->
+    <Column ss:AutoFitWidth="1" ss:Width="240" /> <!--Comments-->
+    <Column ss:AutoFitWidth="1" ss:Width="50" /> <!--Sprint-->
+    <Column ss:AutoFitWidth="1" ss:Width="50" /> <!--Status-->
+      <Column ss:AutoFitWidth="1" ss:Width="45" /> <!--Score -->
+      <Column ss:AutoFitWidth="1" ss:Width="45" /> <!--Days-->
+    <Row>
+      <Cell ss:StyleID='table-header'>
+        <Data ss:Type='String'>Theme</Data>
+      </Cell>
+      <Cell ss:StyleID='table-header'>
+        <Data ss:Type='String'>ID</Data>
+      </Cell>
+      <Cell ss:StyleID='table-header'>
+        <Data ss:Type='String'>User Story</Data>
+      </Cell>
+      <Cell ss:StyleID='table-header'>
+        <Data ss:Type='String'>Acceptance Criteria</Data>
+      </Cell>
+      <Cell ss:StyleID='table-header'>
+        <Data ss:Type='String'>Comments</Data>
+      </Cell>
+      <Cell ss:StyleID='table-header'>
+        <Data ss:Type='String'>Sprint</Data>
+      </Cell>
+      <Cell ss:StyleID='table-header'>
+        <Data ss:Type='String'>Status</Data>
+      </Cell>
+        <Cell ss:StyleID='table-header'>
+          <Data ss:Type='String'><span class="translation_missing" title="translation missing: en.backlog.points">Points</span></Data>
+        </Cell>
+        <Cell ss:StyleID='table-header'>
+          <Data ss:Type='String'>Days</Data>
+        </Cell>
+    </Row>
+        <Row>
+      <Cell>
+  <Data ss:Type='String'>AC Control</Data>
+</Cell>
+<Cell ss:Index='2' ss:StyleID=&#x27;story-color-0&#x27;>
+  <Data ss:Type='String'>ACC1</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'><Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">As</Font> a car driver
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">I want to</Font> set the temperature in the car before driving
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">So I can</Font> have a pleasant ride</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>a) User sets temperature in interface&#10;&#13;b) Raspberry Pi sets AC is to said temperature.</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Prerequisite for ACC2 and others</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Sprint 1</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Accepted</Data>
+</Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'>8.0</Data>
+  </Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'>10.0</Data>
+  </Cell>
+
+    </Row>
+    <Row>
+      <Cell>
+  <Data ss:Type='String'>AC Control</Data>
+</Cell>
+<Cell ss:Index='2' ss:StyleID=&#x27;story-color-0&#x27;>
+  <Data ss:Type='String'>ACC2</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'><Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">As</Font> a car driver
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">I want to</Font> be able to activate the AC remotely
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">So I can</Font> come to the car with a nice temperature</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>a) User connects to car remotely&#10;&#13;b) User sets temperature in interface&#10;&#13;c) Raspberry pi sets AC to said temperature.</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'></Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Sprint 2</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>To do</Data>
+</Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'>16.0</Data>
+  </Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'>20.0</Data>
+  </Cell>
+
+    </Row>
+    <Row>
+      <Cell>
+  <Data ss:Type='String'>AC Control</Data>
+</Cell>
+<Cell ss:Index='2' ss:StyleID=&#x27;story-color-0&#x27;>
+  <Data ss:Type='String'>ACC3</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'><Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">As</Font> a car driver
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">I want to</Font> be sure that the battery doesn&#x27;t go flat when I activate the AC
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">So I can</Font> be sure I am able to drive when I want to</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>a) When user activates system, the Raspberry Pi monitors battery&#10;&#13;b) If battery is unreasonably low, the system deactivates.</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>We should find out when the battery is unreasonably low.</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Sprint 3</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>To do</Data>
+</Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'></Data>
+  </Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'>0.0</Data>
+  </Cell>
+
+    </Row>
+    <Row>
+      <Cell>
+  <Data ss:Type='String'>AC Control</Data>
+</Cell>
+<Cell ss:Index='2' ss:StyleID=&#x27;story-color-0&#x27;>
+  <Data ss:Type='String'>ACC4</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'><Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">As</Font> a car driver
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">I want to</Font> set a specific time for the car to have a temperature
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">So I can</Font> be sure the car is ready when I need it</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>a) A specific time is set in the interface together with the temperature&#10;&#13;b) The Raspberry Pi activates the system, so that the car has the right temperature at the specified time.</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'></Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Sprint 4</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>To do</Data>
+</Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'></Data>
+  </Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'>0.0</Data>
+  </Cell>
+
+    </Row>
+    <Row>
+      <Cell>
+  <Data ss:Type='String'>AC Control</Data>
+</Cell>
+<Cell ss:Index='2' ss:StyleID=&#x27;story-color-1&#x27;>
+  <Data ss:Type='String'>ACC5</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'><Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">As</Font> a car driver
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">I want to</Font> have the car automatically adjust the humidity
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">So I can</Font> see through the windows without any dew obscuring the view </Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>a) There is a sensor inside the car cabin, that monitors the humidity.&#10;&#13;b) The sensor sends its data to the Raspberry Pi&#10;&#13;c) When the conditions for dew are present and the humidity rises, the Raspberry Pi will activate the fans and heating system.</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Conditions: It is colder outside than inside</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Sprint 5</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>To do</Data>
+</Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'></Data>
+  </Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'>0.0</Data>
+  </Cell>
+
+    </Row>
+    <Row>
+      <Cell>
+  <Data ss:Type='String'>Status</Data>
+</Cell>
+<Cell ss:Index='2'>
+  <Data ss:Type='String'>STA1</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'><Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">As</Font> a car driver
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">I want to</Font> have a graphical interface informing me of the car&#x27;s current status
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">So I can</Font> know whether the car needs maintenance</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>a) This involves showing the status of STA3, STA5, STA7, STA9, STA11, STA13 and STA14.</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>This story serves as a framework, around which we can implement additional sensors/things to measure. </Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Sprint 2</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>To do</Data>
+</Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'></Data>
+  </Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'>0.0</Data>
+  </Cell>
+
+    </Row>
+    <Row>
+      <Cell>
+  <Data ss:Type='String'>Status</Data>
+</Cell>
+<Cell ss:Index='2'>
+  <Data ss:Type='String'>STA2</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'><Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">As</Font> a car driver
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">I want to</Font> access the same information from STA1 remotely
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">So I can</Font> know whether the car needs maintenance without leaving the comfort of home</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>a) Same as STA1, but displayed remotely in another device.</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Remote-version of STA1</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Sprint 2</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>To do</Data>
+</Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'></Data>
+  </Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'>0.0</Data>
+  </Cell>
+
+    </Row>
+    <Row>
+      <Cell>
+  <Data ss:Type='String'>Status</Data>
+</Cell>
+<Cell ss:Index='2' ss:StyleID=&#x27;story-color-2&#x27;>
+  <Data ss:Type='String'>STA3</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'><Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">As</Font> a car driver
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">I want to</Font> see how much washer fluid remains
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">So I can</Font> feel safer when driving</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>a) An element in the user interface that shows the current washer fluid level</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Washer fluid = spylervæske. </Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'></Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'></Data>
+</Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'></Data>
+  </Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'>0.0</Data>
+  </Cell>
+
+    </Row>
+    <Row>
+      <Cell>
+  <Data ss:Type='String'>Status</Data>
+</Cell>
+<Cell ss:Index='2' ss:StyleID=&#x27;story-color-2&#x27;>
+  <Data ss:Type='String'>STA4</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'><Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">As</Font> a car driver
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">I want to</Font> be notified when the washer fluid is nearly empty
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">So I can</Font> know purchase more before it is empty</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>a) A popup notification notifies the user that the washer fluid is almost empty</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>requires STA3?</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'></Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'></Data>
+</Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'></Data>
+  </Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'>0.0</Data>
+  </Cell>
+
+    </Row>
+    <Row>
+      <Cell>
+  <Data ss:Type='String'>Status</Data>
+</Cell>
+<Cell ss:Index='2' ss:StyleID=&#x27;story-color-3&#x27;>
+  <Data ss:Type='String'>STA5</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'><Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">As</Font> a car driver
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">I want to</Font> see when the brake fluid needs replacing
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">So I can</Font> ensure safe functioning of the car</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>a) A label represents the status of the brake system</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'></Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Sprint 3</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>To do</Data>
+</Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'></Data>
+  </Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'>0.0</Data>
+  </Cell>
+
+    </Row>
+    <Row>
+      <Cell>
+  <Data ss:Type='String'>Status</Data>
+</Cell>
+<Cell ss:Index='2' ss:StyleID=&#x27;story-color-3&#x27;>
+  <Data ss:Type='String'>STA6</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'><Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">As</Font> a car driver
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">I want to</Font> be notified when the brake fluid needs to be replaced soon
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">So I can</Font> plan to take the car to a workshop</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>a) A popup notification notifies the user that the brake fluid needs replacing. </Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>requires STA5</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Sprint 3</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>To do</Data>
+</Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'></Data>
+  </Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'>0.0</Data>
+  </Cell>
+
+    </Row>
+    <Row>
+      <Cell>
+  <Data ss:Type='String'>Status</Data>
+</Cell>
+<Cell ss:Index='2' ss:StyleID=&#x27;story-color-4&#x27;>
+  <Data ss:Type='String'>STA7</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'><Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">As</Font> a car driver
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">I want to</Font> know when the motor oil and filter needs replacing
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">So I can</Font> make the engine last longer</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>a) An element in the user interface that displays the current oil level  </Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>If possible, also display oil quality ( how contaminated the oil is)</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Sprint 4</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>To do</Data>
+</Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'></Data>
+  </Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'>0.0</Data>
+  </Cell>
+
+    </Row>
+    <Row>
+      <Cell>
+  <Data ss:Type='String'>Status</Data>
+</Cell>
+<Cell ss:Index='2' ss:StyleID=&#x27;story-color-4&#x27;>
+  <Data ss:Type='String'>STA8</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'><Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">As</Font> a car driver
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">I want to</Font> notified when the motor oil and filter needs to be replaced soon
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">So I can</Font> plan around it and buy the needed parts</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>a) A popup notification notifies the user that the motor oil and filter needs to be replaced.</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>requires STA7. If it&#x27;s impossible to display oil quality, the application should instead remind the user to check the oil at regular time intervals.</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Sprint 4</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>To do</Data>
+</Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'></Data>
+  </Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'>0.0</Data>
+  </Cell>
+
+    </Row>
+    <Row>
+      <Cell>
+  <Data ss:Type='String'>Status</Data>
+</Cell>
+<Cell ss:Index='2' ss:StyleID=&#x27;story-color-5&#x27;>
+  <Data ss:Type='String'>STA9</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'><Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">As</Font> a car driver
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">I want to</Font> know the engine coolant level
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">So I can</Font> be sure the engine is properly cooled</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>a) An element in the user interface that displays the current engine coolant level.</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>If possible, also display the level of contamination of the coolant.</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Sprint 5</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>To do</Data>
+</Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'></Data>
+  </Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'>0.0</Data>
+  </Cell>
+
+    </Row>
+    <Row>
+      <Cell>
+  <Data ss:Type='String'>Status</Data>
+</Cell>
+<Cell ss:Index='2' ss:StyleID=&#x27;story-color-5&#x27;>
+  <Data ss:Type='String'>STA10</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'><Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">As</Font> a car driver
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">I want to</Font> be notified when the engine coolant level drops below a certain point
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">So I can</Font> plan to buy more coolant and add it to the car</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>a) A popup notification notifies the user that the engine coolant level is below recommended levels.</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>requires STA9</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Sprint 5</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>To do</Data>
+</Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'></Data>
+  </Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'>0.0</Data>
+  </Cell>
+
+    </Row>
+    <Row>
+      <Cell>
+  <Data ss:Type='String'>Status</Data>
+</Cell>
+<Cell ss:Index='2' ss:StyleID=&#x27;story-color-6&#x27;>
+  <Data ss:Type='String'>STA11</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'><Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">As</Font> a car driver
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">I want to</Font> know that all the lights work
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">So I can</Font> know that others see me and my signals on the road</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>a) A status label that tells whether the lights works or not.</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'></Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Sprint 6</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>To do</Data>
+</Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'></Data>
+  </Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'>0.0</Data>
+  </Cell>
+
+    </Row>
+    <Row>
+      <Cell>
+  <Data ss:Type='String'>Status</Data>
+</Cell>
+<Cell ss:Index='2' ss:StyleID=&#x27;story-color-6&#x27;>
+  <Data ss:Type='String'>STA12</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'><Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">As</Font> a car driver
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">I want to</Font> be notified when a bulb fails
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">So I can</Font> exchange the broken bulb</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>a) A popup notification notifies the user when a bulb fails.</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>requires STA11</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Sprint 6</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>To do</Data>
+</Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'></Data>
+  </Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'>0.0</Data>
+  </Cell>
+
+    </Row>
+    <Row>
+      <Cell>
+  <Data ss:Type='String'>Status</Data>
+</Cell>
+<Cell ss:Index='2' ss:StyleID=&#x27;story-color-7&#x27;>
+  <Data ss:Type='String'>STA13</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'><Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">As</Font> a car driver
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">I want to</Font> know my average fuel consumption
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">So I can</Font> be more conscious about my fuel usage</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>a) A label displays the current average fuel consumption.</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>average fuel consumption in litres per mile(metric)</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Sprint 6</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>To do</Data>
+</Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'></Data>
+  </Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'>0.0</Data>
+  </Cell>
+
+    </Row>
+    <Row>
+      <Cell>
+  <Data ss:Type='String'>Status</Data>
+</Cell>
+<Cell ss:Index='2' ss:StyleID=&#x27;story-color-8&#x27;>
+  <Data ss:Type='String'>STA14</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'><Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">As</Font> a car driver
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">I want to</Font> be able to see the battery&#x27;s current charge
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">So I can</Font> prevent running out</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>a) An element in the user interface displays the current charge level of the battery</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'></Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Sprint 6</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>To do</Data>
+</Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'></Data>
+  </Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'>0.0</Data>
+  </Cell>
+
+    </Row>
+    <Row>
+      <Cell>
+  <Data ss:Type='String'>Status</Data>
+</Cell>
+<Cell ss:Index='2' ss:StyleID=&#x27;story-color-8&#x27;>
+  <Data ss:Type='String'>STA15</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'><Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">As</Font> a car driver
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">I want to</Font> be notified when the battery&#x27;s charge drops to a certain limit
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">So I can</Font> preliminarly </Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>a) A popup notification notifies the user if the battery drops below a certain level</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>We should find out when the battery is unreasonably low (same as ACC3)</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Sprint 6</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>To do</Data>
+</Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'></Data>
+  </Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'>0.0</Data>
+  </Cell>
+
+    </Row>
+    <Row>
+      <Cell>
+  <Data ss:Type='String'>Gamification</Data>
+</Cell>
+<Cell ss:Index='2' ss:StyleID=&#x27;story-color-9&#x27;>
+  <Data ss:Type='String'>GAM1</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'><Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">As</Font> a car driver
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">I want to</Font> have fun while driving eco-friendly
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">So I can</Font> have an incentive to improve</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>a) This should include GAM2, GAM4 and GAM5</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'></Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'></Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'></Data>
+</Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'></Data>
+  </Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'>0.0</Data>
+  </Cell>
+
+    </Row>
+    <Row>
+      <Cell>
+  <Data ss:Type='String'>Gamification</Data>
+</Cell>
+<Cell ss:Index='2' ss:StyleID=&#x27;story-color-9&#x27;>
+  <Data ss:Type='String'>GAM2</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'><Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">As</Font> a car driver
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">I want to</Font> compare my fuel consumption to other drivers that use the same vehicle
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">So I can</Font> be motivated to save more fuel</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>a) A highscore list displays the score of the different users of the same vehicle&#10;&#13;b) Needs a simple user system so the different drivers can log in.</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Compare locally (to other users of same car); comparing on the Internet to other cars requires much more work (separate user story?)</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Sprint 3</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>To do</Data>
+</Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'></Data>
+  </Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'>0.0</Data>
+  </Cell>
+
+    </Row>
+    <Row>
+      <Cell>
+  <Data ss:Type='String'>Gamification</Data>
+</Cell>
+<Cell ss:Index='2' ss:StyleID=&#x27;story-color-9&#x27;>
+  <Data ss:Type='String'>GAM3</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'><Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">As</Font> a car driver
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">I want to</Font> get tips for how to save more fuel
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">So I can</Font> know what to do to save more fuel</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'></Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Would use brake information and acceleration to give relevant hints. Requires research. We are unsure on how to solve this. Should it be with notifications, or as a part of an interface?</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Sprint 4</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>To do</Data>
+</Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'></Data>
+  </Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'>0.0</Data>
+  </Cell>
+
+    </Row>
+    <Row>
+      <Cell>
+  <Data ss:Type='String'>Gamification</Data>
+</Cell>
+<Cell ss:Index='2' ss:StyleID=&#x27;story-color-9&#x27;>
+  <Data ss:Type='String'>GAM4</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'><Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">As</Font> a car driver of a Volvo XC90
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">I want to</Font> see a highscore of fuel consumption among people who drive a Volvo XC90.
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">So I can</Font> be motivated to save more fuel</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>a) Users need to be registered, along with their car type.&#10;&#13;b) High scores are created among people with the same car type</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Compare fuel usage among drivers who use the same kind of car.</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Sprint 5</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>To do</Data>
+</Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'></Data>
+  </Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'>0.0</Data>
+  </Cell>
+
+    </Row>
+    <Row>
+      <Cell>
+  <Data ss:Type='String'>Gamification</Data>
+</Cell>
+<Cell ss:Index='2' ss:StyleID=&#x27;story-color-9&#x27;>
+  <Data ss:Type='String'>GAM5</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'><Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">As</Font> a car driver
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">I want to</Font> be able to reach goals
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">So I can</Font> be motivated to save more fuel</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>a) A set of reachable goals should be specified&#10;&#13;b) The user will get a notification when the goals are reached.&#10;&#13;c) The user should be able to browse their achievements.</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>A set of achievements that awards the driver points when reached. </Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Sprint 6</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>To do</Data>
+</Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'></Data>
+  </Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'>0.0</Data>
+  </Cell>
+
+    </Row>
+    <Row>
+      <Cell>
+  <Data ss:Type='String'>Tech stories</Data>
+</Cell>
+<Cell ss:Index='2'>
+  <Data ss:Type='String'>TES1</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'><Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">As</Font> 
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">I want to</Font> set up Raspberry PI for development (car PI)
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">So I can</Font> </Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>a) access PI from other computers</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'></Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Sprint 1</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Accepted</Data>
+</Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'>4.0</Data>
+  </Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'>5.0</Data>
+  </Cell>
+
+    </Row>
+    <Row>
+      <Cell>
+  <Data ss:Type='String'>Tech stories</Data>
+</Cell>
+<Cell ss:Index='2'>
+  <Data ss:Type='String'>TES2</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'><Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">As</Font> 
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">I want to</Font> set up a running web server
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">So I can</Font> run our server code</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>a) can be accessed from other computers on the same subnet&#10;&#13;b) easy to deploy new code</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'></Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Sprint 1</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Accepted</Data>
+</Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'>4.0</Data>
+  </Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'>5.0</Data>
+  </Cell>
+
+    </Row>
+    <Row>
+      <Cell>
+  <Data ss:Type='String'>Tech stories</Data>
+</Cell>
+<Cell ss:Index='2'>
+  <Data ss:Type='String'>TES3</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'><Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">As</Font> 
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">I want to</Font> define protocol for communication between the different components
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">So I can</Font> develop those features without bad surprises</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>a) web api ←→ carCommunicator&#10;&#13;b) CarDataStreamer → CarCommunicator&#10;&#13;c) CarCommunicator → CarControl&#10;&#13;d) client ←→ web api</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'></Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Sprint 1</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Accepted</Data>
+</Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'>10.0</Data>
+  </Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'>12.5</Data>
+  </Cell>
+
+    </Row>
+    <Row>
+      <Cell>
+  <Data ss:Type='String'>Tech stories</Data>
+</Cell>
+<Cell ss:Index='2'>
+  <Data ss:Type='String'>TES4</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'><Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">As</Font> a developer
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">I want to</Font> have a defined class diagram
+&#10;&#13;<Font html:Color="#999999" xmlns="http://www.w3.org/TR/REC-html40">So I can</Font> easily work on parts of the project that will work with the rest as a whole.</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>a) Temperature and status&#10;&#13;b) Communication between webserver and Pi&#10;&#13;c) Webserver</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'></Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Sprint 1</Data>
+</Cell>
+<Cell>
+  <Data ss:Type='String'>Accepted</Data>
+</Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'>8.0</Data>
+  </Cell>
+  <Cell ss:StyleID='numeric'>
+    <Data ss:Type='String'>10.0</Data>
+  </Cell>
+
+    </Row>
+
+  </Table>
+  <WorksheetOptions xmlns='urn:schemas-microsoft-com:office:excel'>
+    <PageLayoutZoom>0</PageLayoutZoom>
+    <Selected />
+    <Panes />
+    <ProtectObjects>False</ProtectObjects>
+    <ProtectScenarios>False</ProtectScenarios>
+  </WorksheetOptions>
+  <AutoFilter x:Range='R1C1:R1C9' xmlns='urn:schemas-microsoft-com:office:excel'></AutoFilter>
+</Worksheet>
+</Workbook>
