@@ -98,11 +98,15 @@ There are two different types of messages that the `CarCommunicator` can send to
 In return, the `CarAPI` responds with messages for the `CarCommunicator`.
 
 #### status ####
-The status request MUST be made as a POST request to the URI `/status/`. The POST data MUST be JSON. The JSON format is equal to the JSON format of CarDataStream → CarCommunicator.
+The status request MUST be made as a POST request to the URI `/status/`. The POST data MUST be JSON. The JSON format is equal to the [JSON format of CarDataStream → CarCommunicator](#request-format).
 
 Additional signal types are allowed: the current state of the things that CarAPI can control. This means that `AC_enabled` and `AC_temperature` is sent together with the rest of the car data.
 ```json
-{"<signal_name>":"<signal_value>"},
+{
+  "<signal_name>":"<signal_value>",
+  "<signal_name>":"<signal_value>",
+  ...
+}
 ```
 #### error ####
 The error request MUST be made as a POST request to the URI `/error/`. The POST data MUST be JSON following the following format:
