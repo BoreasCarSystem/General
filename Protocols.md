@@ -25,7 +25,8 @@ The `CarDataStream` will transmit information about the state of the car to the 
 ### Connection details ###
 The communication MUST occur through HTTP, with `Content-Type` set to `application/json`.  
 `CarDataStream` MUST send this data every 10 second or more often, but it SHOULD send it every second.  
-`CarCommunicator` SHOULD listen on port 34444, and `CarDataStream` MUST send to port 34444 if no other port is specified.
+`CarCommunicator` SHOULD listen on port 34444, and `CarDataStream` MUST send to port 34444 if no other port is specified.  
+The URI should just be the server root, `/`.
 
 ### Request format ###
 The request MUST be an HTTP POST request, with the following JSON as POST data. The JSON matches the [OpenFX Message Format](https://github.com/openxc/openxc-message-format#commands) in a sense, but it is still different because 1) there's no timestamp data (the data is assumed to be fresh, current data), 2) there's no metadata and 3) there's no duplicate data for the same signal name. Instead, the JSON looks like this:
@@ -97,17 +98,11 @@ There are two different types of messages that the `CarCommunicator` can send to
 In return, the `CarAPI` responds with messages for the `CarCommunicator`.
 
 #### status ####
-The status request MUST be made as a POST request to the URI `/status/`. The POST data MUST be JSON. The JSON format is equal to the [OpenXC Messaging Format](https://github.com/openxc/openxc-message-format#trace-file-format), except the JSON objects are contained in a list (not separated by newlines alone). Thus, it differs from the data sent from `CarDataStream` in that duplicate signal names are allowed, since they have a timestamp. The timestamp represents the time at which the CarCommunicator received that data. 
+The status request MUST be made as a POST request to the URI `/status/`. The POST data MUST be JSON. The JSON format is equal to the JSON format of CarDataStream → CarCommunicator.
 
 Additional signal types are allowed: the current state of the things that CarAPI can control. This means that `AC_enabled` and `AC_temperature` is sent together with the rest of the car data.
 ```json
-[
-
-{"name":"<signal_name>", "value":"<signal_value>",   
-"timestamp":"<time>"},
-...
-
-]
+{"<signal_name>":"<signal_value>"},
 ```
 #### error ####
 The error request MUST be made as a POST request to the URI `/error/`. The POST data MUST be JSON following the following format:
