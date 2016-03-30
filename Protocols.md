@@ -73,11 +73,12 @@ This format is used by the set request, and the status response. The JSON consis
 
 * `enabled` - True if the air condition is currently active, false otherwise.
 * `temperature` - Target temperature in degrees Celcius, expressed as a double.
+* `timer` - The time the car should be at the target temperature. Timeformat: HH:MM. If null, the PI should start the A/C immediately.
  
 When using the set request, one of the properties CAN be omitted. If omitted, that property will remain unchanged. When the `CarControl` responds to a status-message, it MUST include all properties.
 
 ```json
-{ "enabled":"<true/false>", "temperature":"<temperature_value>"}
+{ "enabled":"<true/false>", "temperature":"<temperature_value>", "timer":"<HH:MM/null>"}
 ```
 
 
