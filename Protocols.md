@@ -145,7 +145,8 @@ Each of those objects have two properties:
 ```json
 [
 	{"type": "AC_enabled", "value": true},
-	{"type": "AC_temperature", "value": 22.5}
+	{"type": "AC_temperature", "value": 22.5},
+	{"type": "AC_timer", "value": "HH:MM/null"}
 ]
 ```
 
