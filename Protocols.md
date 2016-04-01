@@ -146,7 +146,7 @@ Each of those objects have two properties:
 [
 	{"type": "AC_enabled", "value": true},
 	{"type": "AC_temperature", "value": 22.5},
-	{"type": "AC_timer", "value": "HH:MM/null"}
+	{"type": "AC_timer", "value": "hh:mm/null"}
 ]
 ```
 
